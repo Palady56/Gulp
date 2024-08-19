@@ -1,0 +1,22 @@
+body {
+  background: #bbb;
+  &_style {
+    border: 1px solid #000;
+  }
+}
+
+.box {
+  padding: 16px;
+  width: 80%;
+  margin: auto;
+  text-align: center;
+}
+
+h1 {
+  color: #555;
+}
+
+html {
+  background-color: #fff;
+}
+
