@@ -1,8 +1,9 @@
-body {
-  background: #bbb;
-  &_style {
-    border: 1px solid #000;
-  }
+html,body {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  transition: 1s;
 }
 
 .box {
@@ -10,13 +11,14 @@ body {
   width: 80%;
   margin: auto;
   text-align: center;
+  transition: all ease .5s;
+  &:hover
+  {
+      background-color: #000;
+  }
 }
 
 h1 {
   color: #555;
-}
-
-html {
-  background-color: #fff;
 }
 

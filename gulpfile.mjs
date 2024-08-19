@@ -13,7 +13,8 @@ gulp.task('styles', function() {
         .pipe(sourcemaps.init())
         .pipe(sass().on('error', sass.logError))
         .pipe(autoprefixer({
-            cascade: false
+            overrideBrowserslist: ['last 5 versions'],
+            cascade: true
         }))
         .pipe(cleanCSS())
         .pipe(sourcemaps.write('.'))
@@ -28,12 +29,12 @@ gulp.task('serve', function() {
     });
 
     gulp.watch('src/scss/**/*.scss', gulp.series('styles'));
-    gulp.watch('src/*.html').on('change', gulp.series('copy-html', browserSync.reload));
+    gulp.watch('./*.html').on('change', gulp.series('copy-html', browserSync.reload));
 });
 
 // html
 gulp.task('copy-html', function() {
-    return gulp.src('src/*.html')
+    return gulp.src('./*.html')
         .pipe(gulp.dest('dist'));
 });
 
